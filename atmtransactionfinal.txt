@@ -1,0 +1,81 @@
+def atmTransaction():
+    print("**welcome to sbi**")
+    print("**INSERT CARD**")
+    print("----PRESS 1 TO INSERT----")
+    print("----PRESS 2 TO EXIT----")
+    choice=int(input("enter choice"))
+    if(choice==1):
+        print("----PRESS 1 FOR CASH WITHDRAWL----")
+        print("----PRESS 2 FOR DEPOSIT----")
+        print("----PRESS 3 FOR DISPLAY BALANCE----")
+        print("----PRESS 4 TO EXIT---")
+        def Start():
+            print("----PRESS 1 FOR CASH WITHDRAWL----")
+            print("----PRESS 2 FOR DEPOSIT----")
+            print("----PRESS 3 FOR DISPLAY BALANCE----")
+            print("----PRESS 4 TO EXIT---")
+            choice1=int(input("enter choice"))
+            if(choice1==1):
+                cashWITHDRAWAL()
+            if(choice1==2):
+                DEPOSIT()
+            if(choice1==3):
+                displayBalance()
+            if(choice1==4):
+                print("THANK YOU FOR USING SBI")
+        def cashWITHDRAWAL():
+            BIRTHYEAR=int(input("ENTER YOUR MOBILE NUMBER"))
+            if(len(str(BIRTHYEAR))==10):
+                password=int(input("ENTER YOUR PIN"))
+                if(password==(abs((BIRTHYEAR%10000)-(BIRTHYEAR//1000000)))):
+                    amount=int(input("---ENTER AMOUNT---"))
+                    availablebalance=BIRTHYEAR*10
+                    if(amount<=availablebalance):
+                        print("💰collect the cash💰")
+                    else:
+                        print("**sorry you don't have enough balane**")
+                else:
+                    print("YOU BLOODY FOOL DOING ALL THESE THING BURSHIT GUY JUST GO AND F**k")
+            else:
+                print("ENTER VALID MOBILE NUMBER")         
+            Start()
+        def DEPOSIT():
+            BIRTHYEAR=int(input("ENTER YOUR MOBILE NUMBER"))
+            if(len(str(BIRTHYEAR))==10):
+                password=int(input("ENTER YOUR PIN"))
+                if(password==BIRTHYEAR%10000):
+                    amount=int(input("---ENTER AMOUNT  TO DEPOSIT---"))
+                    availablebalance=BIRTHYEAR%10000
+                    totalAmount=availablebalance+amount
+                    print("AVAILABLE BALANCE= ",totalAmount)
+                else:
+                    print("YOU BLOODY FOOL DOING ALL THESE THING BURSHIT GUY JUST GO AND F**k")
+            else:
+                print("ENTER VALID MOBILE NUMBER")
+            Start()
+        def displayBalance():
+            BIRTHYEAR=int(input("ENTER YOUR MOBILE NUMBER"))
+            if(len(str(BIRTHYEAR))==10):
+                password=int(input("ENTER YOUR PIN"))
+                if(password==BIRTHYEAR%10000):
+                    availablebalance=BIRTHYEAR%10000
+                    print("AVAILABLE BALANCE= ", availablebalance)
+                else:
+                    print("YOU BLOODY FOOL DOING ALL THESE THING BURSHIT GUY JUST GO AND F**k")
+            else:
+                print("ENTER VALID MOBILE NUMBER")
+            Start()
+        choice1=int(input("enter choice"))
+        if(choice1==1):
+            cashWITHDRAWAL()
+        if(choice1==2):
+            DEPOSIT()
+        if(choice1==3):
+            displayBalance()
+        if(choice1==4):
+            print("THANK YOU FOR USING SBI")
+    elif(choice==2):
+        print("**THANK YOU VISIT AGAIN**")
+    else:
+        print("ENTER VALID CHOICE")
+atmTransaction()
